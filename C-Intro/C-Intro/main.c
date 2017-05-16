@@ -6,10 +6,18 @@
 //  Copyright © 2017 Keegan Jebb. All rights reserved.
 //
 
+// getchar functions are included in stdio.h
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+//getchar functions are included in stdio.h
+int main()
+{
+  // \n is new line
+    printf( "I am alive!  Beware.\n" );
+
+    //Waits until the user hits enter to close the output window
+    getchar();
+
+    //Return 0 means success
     return 0;
 }
