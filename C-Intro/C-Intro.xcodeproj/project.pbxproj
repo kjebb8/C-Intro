@@ -9,21 +9,11 @@
 /* Begin PBXBuildFile section */
 		C03CEDA01ECB56D0009D9C02 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C03CED9F1ECB56D0009D9C02 /* main.c */; };
 		C03CEDA71ECB5E7F009D9C02 /* var.c in Sources */ = {isa = PBXBuildFile; fileRef = C03CEDA61ECB5E7F009D9C02 /* var.c */; };
-		C05BBAB71ED3498900650D6E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C05BBAB61ED3498900650D6E /* main.c */; };
 		C0C122B41ECF4E6E00CBEADB /* loop.c in Sources */ = {isa = PBXBuildFile; fileRef = C0C122B31ECF4E6E00CBEADB /* loop.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C03CED9A1ECB56D0009D9C02 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		C05BBAB21ED3498900650D6E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -38,8 +28,6 @@
 		C03CED9C1ECB56D0009D9C02 /* C-Intro */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C-Intro"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03CED9F1ECB56D0009D9C02 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C03CEDA61ECB5E7F009D9C02 /* var.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = var.c; sourceTree = "<group>"; };
-		C05BBAB41ED3498900650D6E /* FirstTutorials */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FirstTutorials; sourceTree = BUILT_PRODUCTS_DIR; };
-		C05BBAB61ED3498900650D6E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C05BBABB1ED34B9900650D6E /* loop_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loop_header.h; sourceTree = "<group>"; };
 		C05BBABC1ED34BC400650D6E /* var_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = var_header.h; sourceTree = "<group>"; };
 		C0C122B31ECF4E6E00CBEADB /* loop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loop.c; sourceTree = "<group>"; };
@@ -53,13 +41,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C05BBAB11ED3498900650D6E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,7 +48,6 @@
 			isa = PBXGroup;
 			children = (
 				C03CED9E1ECB56D0009D9C02 /* C-Intro */,
-				C05BBAB51ED3498900650D6E /* FirstTutorials */,
 				C03CED9D1ECB56D0009D9C02 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				C03CED9C1ECB56D0009D9C02 /* C-Intro */,
-				C05BBAB41ED3498900650D6E /* FirstTutorials */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,14 +70,6 @@
 				C05BBABC1ED34BC400650D6E /* var_header.h */,
 			);
 			path = "C-Intro";
-			sourceTree = "<group>";
-		};
-		C05BBAB51ED3498900650D6E /* FirstTutorials */ = {
-			isa = PBXGroup;
-			children = (
-				C05BBAB61ED3498900650D6E /* main.c */,
-			);
-			path = FirstTutorials;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,23 +92,6 @@
 			productReference = C03CED9C1ECB56D0009D9C02 /* C-Intro */;
 			productType = "com.apple.product-type.tool";
 		};
-		C05BBAB31ED3498900650D6E /* FirstTutorials */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C05BBABA1ED3498900650D6E /* Build configuration list for PBXNativeTarget "FirstTutorials" */;
-			buildPhases = (
-				C05BBAB01ED3498900650D6E /* Sources */,
-				C05BBAB11ED3498900650D6E /* Frameworks */,
-				C05BBAB21ED3498900650D6E /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FirstTutorials;
-			productName = FirstTutorials;
-			productReference = C05BBAB41ED3498900650D6E /* FirstTutorials */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,9 +102,6 @@
 				ORGANIZATIONNAME = "Keegan Jebb";
 				TargetAttributes = {
 					C03CED9B1ECB56D0009D9C02 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
-					C05BBAB31ED3498900650D6E = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
@@ -168,7 +119,6 @@
 			projectRoot = "";
 			targets = (
 				C03CED9B1ECB56D0009D9C02 /* C-Intro */,
-				C05BBAB31ED3498900650D6E /* FirstTutorials */,
 			);
 		};
 /* End PBXProject section */
@@ -181,14 +131,6 @@
 				C0C122B41ECF4E6E00CBEADB /* loop.c in Sources */,
 				C03CEDA01ECB56D0009D9C02 /* main.c in Sources */,
 				C03CEDA71ECB5E7F009D9C02 /* var.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C05BBAB01ED3498900650D6E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C05BBAB71ED3498900650D6E /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,20 +230,6 @@
 			};
 			name = Release;
 		};
-		C05BBAB81ED3498900650D6E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C05BBAB91ED3498900650D6E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -322,14 +250,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		C05BBABA1ED3498900650D6E /* Build configuration list for PBXNativeTarget "FirstTutorials" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C05BBAB81ED3498900650D6E /* Debug */,
-				C05BBAB91ED3498900650D6E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
