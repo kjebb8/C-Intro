@@ -1,6 +1,6 @@
 #include <stdio.h>
 
- int get_var ()
+int get_var ()
  {
     int this_is_a_number;
 
