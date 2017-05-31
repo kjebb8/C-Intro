@@ -185,7 +185,86 @@ int multiply (int x, int y)
   //------------------------------
   //Tutorial 3
 
-int main ()
+
+//int main ()
+//{
+  //File I/O
+  /*
+  FILE *fpr;
+  FILE *fpw;
+  fpr = fopen("/Users/keeganjebb/Desktop/Programming/Git-Repos/C-Intro/C-Intro/C-Intro/test.txt", "r");
+  fpw = fopen("/Users/keeganjebb/Desktop/Programming/Git-Repos/C-Intro/C-Intro/C-Intro/testw.txt", "w");
+  //fprintf(fpr, "Testing...\n");
+  int letter;
+  while  ( ( letter = fgetc( fpr ) ) != EOF )
+  {
+    printf( "%c", letter );
+    fputc(letter, fpw);
+  }
+  fprintf(fpw, "\nThis was copied from test.txt!");
+  fclose(fpr);
+  fclose(fpw);
+
+  FILE *fp;
+  fp=fopen("/Users/keeganjebb/Desktop/Programming/Git-Repos/C-Intro/C-Intro/C-Intro/test.bin", "wb");
+  char x[10]="ABCDEFGHIJ";
+  fwrite(x, sizeof(x[0]), sizeof(x)/sizeof(x[0]), fp);
+*/
+
+  //Typecasting
+  /*
+   printf( "%c\n", (char)65 ); //65 is A in ASCII, c% is for character
+   for ( int x = 0; x < 128; x++ )
+   {
+     printf( "%d = %c\n", x, (char)x );
+   }
+   int a = 3;
+   int b = 5;
+   printf("%d versus %f\n", a/b, (float)a/b);
+
+   getchar();
+ }
+   */
+
+/*
+   //Command Line Arguments
+int main ( int argc, char *argv[] )
 {
-  
+  if ( argc != 2 ) // argc should be 2 for correct execution
+  {
+  // We print argv[0] assuming it is the program name
+    printf( "usage: %s filename", argv[0] );
+  }
+  else
+  {
+    printf("%d\n", argc);
+    printf("%s\n", argv[0]);
+    printf("%s\n", argv[1]);
+
+  // We assume argv[1] is a filename to open
+    FILE *file = fopen( argv[1], "r" );
+
+  // fopen returns 0, the NULL pointer, on failure
+    if ( file == 0 )
+    {
+      printf( "Could not open file\n" );
+    }
+    else
+    {
+      int x;
+      //read one character at a time from file, stopping at EOF, which
+        // indicates the end of the file.  Note that the idiom of "assign
+         //to a variable, check the value" used below works because
+         //the assignment statement evaluates to the value assigned
+      while  ( ( x = fgetc( file ) ) != EOF )
+      {
+          printf( "%c", x );
+      }
+      fclose( file );
+    }
+  }
 }
+*/
+
+//-------------------------------------------------
+//Tutorial 4
