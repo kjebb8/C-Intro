@@ -268,3 +268,210 @@ int main ( int argc, char *argv[] )
 
 //-------------------------------------------------
 //Tutorial 4
+
+// Linked Lists
+
+/*
+struct ll_node
+{
+  int x;
+  struct ll_node *next;
+};
+
+typedef struct ll_node node;
+
+int main()
+{
+  // This will be the unchanging first node and moving node
+  node *root, *conductor;
+
+  // Now root points to a node struct
+  root = (node *) malloc( sizeof(node) );
+  //By using the -> operator, you can modify what the node,
+  //a pointer, (root in this case) points to.
+  root->x = 12;
+  // Creates a node at the end of the list
+  root->next = (node *) malloc( sizeof(node) );
+
+  conductor = root->next;
+
+  if ( conductor == 0 )
+  {
+    printf( "Out of memory" );
+    return 0;
+  }
+  // initialize the new memory
+  conductor->next = 0;
+  conductor->x = 42;
+
+  conductor = root;
+  //Read out values
+  while ( conductor != NULL )
+  {
+    printf( "%d\n", conductor->x );
+    conductor = conductor->next;
+  }
+
+//Free memory
+  while ((conductor = root) != NULL)// set conuctor to root, stop if list empty.
+  {
+    root = root->next;          // advance head to next element.
+    free (conductor);                // delete saved pointer.
+  }
+  return 0;
+  getchar();
+}
+*/
+
+
+//Recursive Functions
+
+/*
+void printnum ( int begin )
+{
+    printf( "%d", begin );
+    if ( begin < 9 )         // The base case is when begin is no longer
+    {                           // less than 9
+        printnum ( begin + 1 );
+    }
+    //display begin again after we've already printed everything from 1 to 9
+    //and from 9 to begin + 1
+    printf( "%d", begin );
+}
+
+int factorial (int num)
+{
+  int result;
+  if (num > 1)
+  {
+    result = num * factorial (num - 1);
+  }
+  else if (num == 1)
+  {
+    result = 1;
+  }
+  return result;
+}
+
+int main()
+{
+  printnum (1);
+  printf("\n%d", factorial(5) );
+  getchar();
+  return 0;
+}
+*/
+
+//Variable Argument Lists
+
+/*
+
+#include <stdarg.h>
+
+// this function will take the number of values to average
+  // followed by all of the numbers to average
+double average ( int num, ... )
+{
+    va_list arguments;
+    double sum = 0;
+
+    //Initializing arguments to store all values after num
+    va_start ( arguments, num );
+    //Sum all the inputs; we still rely on the function caller to tell us how
+    // many there are
+    for ( int x = 0; x < num; x++ )
+    {
+        sum += va_arg ( arguments, double );
+    }
+    va_end ( arguments );                  // Cleans up the list
+
+    return sum / num;
+}
+
+int main()
+{
+    // this computes the average of 13.2, 22.3 and 4.5 (3 indicates the number of values to average)
+    printf( "%f\n", average ( 3, 12.2, 22.3, 4.5 ) );
+    //here it computes the average of the 5 values 3.3, 2.2, 1.1, 5.5 and 3.3
+    printf( "%f\n", average ( 5, 3.3, 2.2, 1.1, 5.5, 3.3 ) );
+}
+*/
+
+//Binary Trees
+/*
+
+struct node
+{
+  int key_value;
+  struct node *left;
+  struct node *right;
+};
+
+void destroy_tree(struct node *leaf)
+{
+  if( leaf != 0 )
+  {
+      destroy_tree(leaf->left);
+      destroy_tree(leaf->right);
+      free( leaf );
+  }
+}
+
+//Need pointer to pointer so that function changes the address that the input points to
+void insert(int key, struct node **leaf)
+{
+    if( *leaf == 0 )
+    {
+        *leaf = (struct node*) malloc( sizeof( struct node ) );
+        (*leaf)->key_value = key;
+        // initialize the children to null
+        (*leaf)->left = 0;
+        (*leaf)->right = 0;
+    }
+    else if(key < (*leaf)->key_value)
+    {
+        insert( key, &(*leaf)->left );
+    }
+    else if(key > (*leaf)->key_value)
+    {
+        insert( key, &(*leaf)->right );
+    }
+}
+
+struct node *search(int key, struct node *leaf)
+{
+  if( leaf != 0 )
+  {
+      if(key==leaf->key_value)
+      {
+          return leaf;
+      }
+      else if(key<leaf->key_value)
+      {
+          return search(key, leaf->left);
+      }
+      else
+      {
+          return search(key, leaf->right);
+      }
+  }
+  else return 0;
+}
+
+int main()
+{
+  struct node *root = 0;
+  insert(10, &root);
+  insert(5, &root);
+  insert(6, &root);
+  struct node *answer = search(6, root);
+  printf("\n%d", answer->key_value);
+  destroy_tree(root);
+}
+*/
+int main()
+{
+  printf("This is the end of the C Intro Tutorials\n");
+  getchar();
+  return 0;
+}
