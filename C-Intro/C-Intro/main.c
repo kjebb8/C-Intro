@@ -9,7 +9,7 @@
 // getchar functions are included in stdio.h
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 //-----------------------------------------------
 //Tutorial 1
 
@@ -124,6 +124,11 @@ int multiply (int x, int y)
   char (*sp2)[4][4];
   sp2 = &astring;
   // Scanf sucks for this... can enter more than 3 characters
+  //scanf() to input a string works, but it will terminate the string after it
+  //reads the first space, and moreover, because scanf doesn't know how big the
+  //array is, it can lead to "buffer overflows" when the user inputs a string
+  //that is longer than the size of the string (which acts as an input "buffer").
+
 //  scanf( "%s", (*sp2)[0] );
   for ( int i = 0; i < 3; ++i )
   {
@@ -469,6 +474,164 @@ int main()
   destroy_tree(root);
 }
 */
+
+//Enums
+//New data types that can take on only a restricted range of values
+/*
+int main ()
+{
+  enum wind_directions_t {NO_WIND = 0, NORTH_WIND = 1000, SOUTH_WIND = 1180, EAST_WIND = 1090, WEST_WIND = 1270};
+  enum wind_directions_t wind_dir;
+  char user_wind_dir[7];
+  int enter_success = 0;
+
+  while (enter_success == 0) {
+    printf("Please enter NORTH, SOUTH, EAST, WEST, or NONE for our wind direction\n");
+    fgets(user_wind_dir, sizeof user_wind_dir, stdin);
+    char* p;
+    if ((p = strchr(user_wind_dir, '\n')) == NULL) //If no \n in getchar
+    {
+      scanf("%*[^\n]");scanf("%*c");//clear upto newline (discards everything before \n)
+    } else
+    {
+      *p = 0; //Gets rid of the \n character
+    }
+
+    if (!strcmp(user_wind_dir, "NORTH") )
+    {
+      wind_dir = NORTH_WIND;
+      enter_success = 1;
+    }
+    else if ( !strcmp(user_wind_dir, "SOUTH") )
+    {
+      wind_dir = SOUTH_WIND;
+      enter_success = 1;
+    }
+    else if ( !strcmp(user_wind_dir, "EAST") )
+    {
+      wind_dir = EAST_WIND;
+      enter_success = 1;
+    }
+    else if ( !strcmp(user_wind_dir, "WEST") )
+    {
+      wind_dir = WEST_WIND;
+      enter_success = 1;
+    }
+    else if ( !strcmp(user_wind_dir, "NONE") )
+    {
+      wind_dir = NO_WIND;
+      enter_success = 1;
+    }
+    else
+    {
+      printf("%s is not a valid direction!\n", user_wind_dir);
+    }
+  }
+  printf("%d\n", wind_dir);
+  getchar();
+  return 0;
+}
+*/
+
+//--------------------------------------------------------------
+//Preprocessor
+
+/*
+int main()
+{
+//There are essentially three uses of the preprocessor--directives, constants, and macros.
+//Directives are commands that tell the preprocessor to skip part of a file,
+//include another file, or define a constant or macro. Directives always begin
+// with a sharp sign (#) and for readability should be placed flush to the left
+// of the page. All other uses of the preprocessor involve processing #define'd constants or macros.
+//Typically, constants and macros are written in ALL CAPS to indicate they are special (as we will see).
+
+//Header Files -  #include directive tells the preprocessor to grab the text of
+//a file and place it directly into the current file. Typically, such statements
+// are placed at the top of a program
+
+//constants - #define [identifier name] [value]
+//whenever [identifier name] shows up in the file, it will be replaced by [value].
+//const is generally safer because you can define a Type
+#define PI_PLUS_ONE (3.14 + 1)
+
+//Conditional Compilation
+//#if, #elif, #else, #ifdef, and #ifndef ending with #endif
+//Use #ifndef to only define something in multiple headers once
+
+//Macros - Type neutral, inlined directly into code, no function call overhead
+//Beware: Macros be dangerous!
+#define MULT(x, y) ((x) * (y))
+int z = (int)MULT(3 + 2, 4 + 2);
+
+//Multiline macros
+#define SWAP(a, b)  a ^= b; b ^= a; a ^= b;
+//or
+#define SWAP2(a, b) {                   \
+                        a ^= b;         \
+                        b ^= a;         \
+                        a ^= b;         \
+                    }
+
+//Pasting tokens
+#define BUILD_FIELD(field) my_struct.inner_struct.union_a.##field
+//Expands to "my_struct.inner_struct.union_a.field1"
+
+//String tokens
+#define PRINT_TOKEN(token) printf(#token " is over %d\n", token)
+PRINT_TOKEN(4500 + 4500);
+
+//? : operator
+int x = 10;
+int y = 4;
+int max_plus_1 = (x < y ? ++y : ++x);
+//means if x is less than y, max_plus_1 is y+1 else it is x+1
+
+printf("%d\n%d\n%d\n%d\n", z, x, y, max_plus_1);
+}
+*/
+
+
+// Random numbers
+
+/*
+#include <time.h>
+
+const int LOW = 1;
+const int HIGH = 6;
+
+int main()
+{
+  //Declare variable to hold seconds on clock.
+  time_t seconds;
+
+  //Get value from system clock and place in seconds variable.
+  time(&seconds);
+
+  //Convert seconds to a unsigned integer and pass to make new seed
+  srand((unsigned int) seconds);
+
+  //Output random values.
+  printf("%d\n%d\n%d\n",rand(), rand(), rand());
+
+  int first_die, sec_die;
+
+  first_die = rand() % (HIGH - LOW + 1) + LOW;
+  sec_die = rand() % (HIGH - LOW + 1) + LOW;
+
+  printf("First roll: %d\nSecond roll: %d\n", first_die, sec_die);
+  printf("Hit enter to roll again");
+  getchar();
+
+  first_die = rand() % (HIGH - LOW + 1) + LOW;
+  sec_die = rand() % (HIGH - LOW + 1) + LOW;
+
+  printf("First roll: %d\nSecond roll: %d\n", first_die, sec_die);
+  return 0;
+}
+*/
+
+
 int main()
 {
   printf("This is the end of the C Intro Tutorials\n");
